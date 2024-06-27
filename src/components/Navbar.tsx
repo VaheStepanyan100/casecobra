@@ -25,6 +25,15 @@ const Navbar = () => {
                 >
                   Sign out
                 </Link>
+                {isAdmin ? <Link
+                  href="/api/auth/logout"
+                  className={buttonVariants({
+                    size: 'sm',
+                    variant: 'ghost',
+                  })}
+                >
+                  Dashboard ✨
+                </Link>: null}
                
                 <Link
                   href="/configure/upload"
