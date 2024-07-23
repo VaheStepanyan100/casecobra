@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Check, ChevronsUpDown } from 'lucide-react';
+import { BASE_PRICE } from '@/config/products';
 
 interface DesignConfiguratorProps {
   configId: string;
@@ -235,10 +236,13 @@ const DesignConfigurator = ({
                               </span>
                             </span>
 
-                            <RadioGroup.Description as='span' className='mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right'>
-                                <span className='font-medium text-gray-900'>
-                                  {formatPrice(option.price / 100)}
-                                </span>
+                            <RadioGroup.Description
+                              as="span"
+                              className="mt-2 flex text-sm sm:ml-4 sm:mt-0 sm:flex-col sm:text-right"
+                            >
+                              <span className="font-medium text-gray-900">
+                                {formatPrice(option.price / 100)}
+                              </span>
                             </RadioGroup.Description>
                           </RadioGroup.Option>
                         ))}
@@ -250,6 +254,20 @@ const DesignConfigurator = ({
             </div>
           </div>
         </ScrollArea>
+
+        <div className="w-full px-8 h-16 bg-white">
+          <div className="h-px w-full bg-zinc-200" />
+          <div className="w-full h-full flex justify-end items-center">
+            <div className="w-full flex gap-6 items-center">
+              <p className="font-medium whitespace-nowrap">
+                {formatPrice(
+                  (BASE_PRICE + options.finish.price + options.material.price) /
+                    100
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
