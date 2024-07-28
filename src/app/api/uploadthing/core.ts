@@ -26,6 +26,7 @@ export const ourFileRouter = {
             imageUrl: file.url,
             height: height || 500,
             width: width || 500,
+            color: 'black', 
           },
         });
         return { configId: configuration.id };
