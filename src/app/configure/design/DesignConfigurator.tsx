@@ -93,7 +93,7 @@ const DesignConfigurator = ({
         top: caseTop,
         width,
         height,
-      } = phoneCaseRef.current?.getBoundingClientRect();
+      } = phoneCaseRef.current!.getBoundingClientRect();
       const { left: containerLeft, top: containerTop } =
         containerRef.current!.getBoundingClientRect();
 
