@@ -5,6 +5,7 @@ import { db } from '@/db';
 import { formatPrice } from '@/lib/utils';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { notFound } from 'next/navigation';
+import StatusDropdown from './StatusDropdown';
 
 const Page = async () => {
   const { getUser } = getKindeServerSession();
@@ -119,7 +120,7 @@ const Page = async () => {
                   </div>
                 </TableCell>
                 <TableCell className='hidden sm:table-cell'>
-                  status
+                <StatusDropdown id={order.id} orderStatus={order.status} />
                 </TableCell>
                 <TableCell className='hidden md:table-cell'>
                   {order.createdAt.toLocaleDateString()}
