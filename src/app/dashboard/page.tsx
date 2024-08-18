@@ -88,7 +88,7 @@ const Page = async () => {
             </CardHeader>
             <CardContent>
               <div className='text-sm text-muted-foreground'>
-                of {formatPrice(WEEKLY_GOAL)} goal
+                of {formatPrice(MONTHLY_GOAL)} goal
               </div>
             </CardContent>
             <CardFooter>
